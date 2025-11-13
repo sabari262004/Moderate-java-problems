@@ -1,0 +1,36 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+ 
+      List<Integer> list=new ArrayList<>();
+      
+      int m=100;
+      int max=500;
+     
+      for(int i=m;i<=max;i++){
+        if(isstep(i)){
+            list.add(i);
+        }
+      }
+       for(int i:list){
+           
+      System.out.print(i+" ");
+       }
+    }
+    static boolean isstep(int a){
+        if(a<=10){
+            return true;
+        }
+       int cur=a%10;
+       int num=a/10;
+       while(num>0){
+           int current=num%10;
+           if(Math.abs(current-cur)!=1){
+               return false;
+           }
+           cur=num%10;
+           num=num/10;
+       }
+       return true;
+    }
+}
