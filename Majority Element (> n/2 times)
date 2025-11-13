@@ -1,0 +1,27 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+
+
+   int  s=sc.nextInt();
+   int arr[]=new int[s];
+   for(int i=0;i<s;i++){
+       arr[i]=sc.nextInt();
+   }
+   int l=s/2;
+   HashMap<Integer,Integer> map=new HashMap<>();
+   for(int i:arr)
+{
+    map.put(i,map.getOrDefault(i,0)+1);
+}
+for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+if(entry.getValue()>=l)
+{
+    
+System.out.print(entry.getKey());
+ 
+}
+}
+}
+}
